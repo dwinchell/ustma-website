@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#">
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" ><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgQAUlBRGwEHXFRaBwc="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+		<!--meta tags -->
+<meta property="og:title" content="USTMA" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://:8080/ehome/ustma/79137/?&" />
+	<meta property="og:image" content="https://www.ustma.com/file_uploads/89c663c0d08ef80d9bf4c95b014583de_header.jpg" />
+        
+<!-- title -->
+
+<title>USTMA</title>
+
+
+<script language="javascript" type="text/javascript" src="../../../include/scripts/scripts.js"></script>
+<script language="javascript" type="text/javascript" src="../../include/scripts.js"></script>
+
+<script type="text/javascript" src="../../../include/scripts/prototype.js"></script>
+<script type="text/javascript" src="../../../include/scripts/scriptaculous.js?load=effects,builder"></script>
+<script type="text/javascript" src="../../../include/scripts/lightbox-web.js?v=1"></script>
+
+<!--[if IE 7]>
+<style type="text/css">
+	.ehsm ul ul ul {margin-left:-1px;}
+	.ehsm ul ul ul.left {margin-left:1px;}
+	.ehtm li { white-space:nowrap; };
+</style>'."\n";
+<![endif]-->
+
+<style type="text/css">
+body{	background-color: #141514;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;}
+label{ padding:2px; display:inline-block; }
+select,input,textarea { font-family:Arial;font-size:12px;border:1px solid #abadb3;border-right-color:#dbdfe6;border-bottom-color:#dbdfe6; }
+input.button{ border:0; }
+.standard { font-family:Arial;font-size:12px; }
+.header { font-family:Arial;font-size:13px;color:#000000;font-weight:bold;display:none; }
+.on { font-family:Arial;color:#ffffff;font-size:14px;font-weight:bold; }
+.off { font-family:Arial;color:#CCCCCC;font-size:12px; }
+.red { font-family:Arial;font-size:12px;color:red; }
+.error { background:#ffeeee;border:1px solid #ff9999; }
+.selectbox { color:#000;font-family:arial;font-size:8pt;background-color:#FFF; }
+.headercell { font-family:arial;font-size:8pt;font-weight:bold;color:#000000; }
+.maincell { font-family:arial;font-size:8pt;color:#000;background:#FFF;text-align:center;height:22px; }
+.maincellover { font-family:arial;font-size:8pt;font-weight:bold;color:#FFF;background:#0066cc;text-align:center;cursor:pointer; }
+.tablerow1 { background:#eeeeee; }
+.tablerow2 { background:#ffffff; }
+a:link,a:visited { text-decoration:none;color:#0066cc; outline:none; }
+a:hover { color:#2c476a; }
+a.menu:link,a.menu:visited { font-family:Arial;font-size:13px;text-decoration:none;color:#000000; }
+a.menu:hover { color:#000000; }
+a.footer:link,a.footer:visited { font-family:Arial;font-size:12px;text-decoration:underline;color:#000000; }
+a.footer:hover { text-decoration:none;color:#000000; }
+.poweredBy { margin:0; padding:16px 0 0 10px; }
+#inner_content{
+padding:0!important;
+width:1280px!important;
+font-family:Arial, Helvetica, sans-serif;
+}
+#footer_section{
+ background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 2px solid #EEEEEE;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 0;
+    text-align: center;
+    width: 1280px !important;
+}
+#inner_content h2{
+font-size:22px;
+color:#666666;
+}
+#inner_page{
+padding:20px;
+min-height:300px;
+}
+#inner_page p{
+font-size:14px;
+line-height:22px;
+}
+#inner_page ul li{
+font-size:14px;
+line-height:22px;
+}
+#main_section{
+width:1280px!important;
+}
+#main_section .left{
+float:left;
+width:910px;
+}
+#main_section .right{
+float:left;
+padding-left: 30px;
+width: 295px;
+}
+.eh_outer_div{
+width:1280px!important;
+}
+.ehtm { font-size:14px; z-index:1000000;background:#e8e8e8;height:48px;font-family:"Arial W01 Narrow",Arial, Helvetica, sans-serif;font-weight:bold;font-transform:uppercase; }
+.ehtm ul { padding:0; margin:0; list-style-type:none; height:48px; background:#e8e8e8; z-index:1000000; }
+.ehtm ul ul { width:12em; z-index:1000000; }
+.ehtm ul li { float:left; height:48px; line-height:48px; z-index:1000000; border-left:#ffffff 1px solid;border-right:#e6e6e6 1px solid;}
+.ehtm ul ul li { display:block; width:12em; height:auto; position:relative; line-height:1em; }
+.ehtm ul ul li:hover{ background:#E0E0E0;display:block; }
+.ehtm a,.ehtm a:visited,.ehtm span { display:block; float:left; height:100%; text-decoration:none; background:#e8e8e8; color:#999999; padding:0 38px;  z-index:1000000; text-transform:uppercase;}
+.ehtm ul ul a, .ehtm ul ul a:visited { display:block; background:#e8e8e8; color:#999999; width:211px;font-size:13px;text-transform:none; height:100%; line-height:24px; padding:0.5em 1em; }
+.ehtm ul table ul a,.ehtm ul table ul a:visited { width:12em; }
+.ehtm table {position:absolute; left:0; top:0; font-size:1em; z-index:-1;}
+.ehtm ul ul table {lef	:-1px;}
+.ehtm li:hover { position:relative;background:none repeat scroll 0 0 #E8E8E8; }
+* html .ehtm a:hover { position:relative; }
+.ehtm a:hover { color:#000000; }
+.ehtm :hover > a { color:#000000;background:none repeat scroll 0 0 #E0E0E0;  }
+.ehtm ul ul a:hover{ color:#000000; background:none repeat scroll 0 0 #E0E0E0;}
+.ehtm ul ul :hover > a { color:#000000;background:none repeat scroll 0 0 #E0E0E0;  }
+.ehtm ul ul ul a:hover { }
+.ehtm ul ul ul :hover > a { }
+.ehtm ul ul ul ul a:hover { }
+.ehtm ul ul { visibility:hidden; position:absolute; height:0; top:48px; left:0; width:14em; }
+.ehtm ul ul ul{ left:14em; top:0; width:14em; }
+.ehtm ul li:hover ul, .ehtm ul a:hover ul { visibility:visible; padding-bottom:3em; height:auto; background:transparent url(../../../images/trans.gif); }
+.ehtm ul :hover ul ul{ visibility:hidden; }
+.ehtm ul :hover ul :hover ul ul{ visibility:hidden; }
+.ehtm ul :hover ul :hover ul{ visibility:visible; }
+.ehtm ul :hover ul :hover ul :hover ul { visibility:visible; }
+#ehsm { margin:0 auto; position:relative; }
+#ehsm ul {margin:0; padding:0; list-style:none; white-space:nowrap; z-index:500000; }
+#ehsm li {margin:0; padding:0; list-style:none;}
+#ehsm li {display:inline-block; display:inline;}
+#ehsm ul {position:absolute; left:-9999px;}
+#ehsm ul.level1 { position:absolute; left:0px; top:0px; width:190px; background:#2c476a; }
+#ehsm a { display:block; color:#ffffff; line-height:22px; text-decoration:none; }
+#ehsm ul li:hover > ul {visibility:visible; left:100%; margin-top:-22px; margin-left:-1px; }
+#ehsm a:hover ul,
+#ehsm a:hover a:hover ul,
+#ehsm a:hover a:hover a:hover ul {left:100%; visibility:visible;}
+#ehsm a:hover ul ul,
+#ehsm a:hover a:hover ul ul {left:-9999px;}
+#ehsm li a:hover { background:#001437; color:#ffffff; }
+#ehsm li:hover > a {background:#001437; color:#ffffff; }
+#ehsm li a.fly { background:#2c476a; color:#ffffff; padding-left:1em; padding-right:2em; }
+#ehsm li a.fly:hover { background:#a8b7c6; color:#ffffff; }
+#ehsm li:hover > a.fly { background:#a8b7c6; color:#ffffff; }
+#ehsm table {position:absolute; left:99%; height:0; width:0; border-collapse:collapse; margin-top:-5px; margin-left:-1px;}
+.sel_top { color:#2d2c2c !important; background:#e0e0e0 !important; }
+.sel_side { color:#2d2c2c !important; background:#e0e0e0 !important; }
+.agenda_table { background:#a8b7c6; }
+.agenda_table.td { padding:2px; }
+.eh_outer_div { overflow:hidden; }
+.dates { clear:both; }
+.dates a { margin:0 0.2em 0.5em; padding:0.5em; background:#a8b7c6; display:block; float:left; }
+.dates .selected{ color:#ffffff; background:#2c476a; }
+#wrapper {
+	width:1280px;
+	margin:0 auto;
+}
+#menu {
+	height:48px;
+}
+.main_img {
+	background:url(../../../image-acc=14&id=102165.php.html) no-repeat top left;
+	position:relative;
+	width:1280px;
+	height:394px;
+}
+.main_img .textbox {
+	height:175px;
+	width:430px;
+	background:url(../../../image-acc=14&id=102164.php.html) no-repeat top left;
+	position:absolute;
+	top:94px;
+	right:110px;
+	padding:30px;
+}
+.main_img .textbox .btn {
+	float:right;
+	padding-right:5px;
+	
+}
+.main_img .textbox p {
+	color:#ffffff;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:25px;
+}
+.main_img .textbox p {
+}
+.center_content {
+	padding-top:10px;
+        overflow:hidden;
+        background-color:#e8e8e8;
+}
+.center_content ul li {
+	float:left;
+	width:385px;
+	height:279px;
+	list-style:none;
+}
+.center_content ul li.snapshot {
+	background:url(../../../images/5f477fbc865e0956802dd342420b9d3a_snapshot.jpg) no-repeat top left;
+	position:relative;
+}
+.center_content ul li.events {
+	background:url(../../../images/85c3b37db4e0f83e4609425ea3982c24_events.jpg) no-repeat top left;
+	position:relative;
+}
+.center_content ul li.youcan {
+	background:url(../../../images/0e4c1079d356a1e68d20aded753ba77b_youcan.jpg) no-repeat top left;
+	position:relative;
+}
+.center_content ul li.events ul {
+	margin:0;
+	padding-left:23px;
+}
+.center_content ul li.events ul.list {
+	padding-top:67px;
+	margin:0;
+}
+.center_content ul li.events ul.list li {
+	background:url(../../../images/8e0c7bea54c6d74f239838f25c523b24_white_bul.png) no-repeat left 12px;
+	padding-left:17px;
+	line-height:40px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#ffffff;
+	height:40px;
+}
+.center_content ul li.events ul.list li a {
+	color:#ffffff;
+	text-decoration:none;
+}
+.center_content ul li.snapshot .btn {
+	position:absolute;
+	width:124px;
+	height:37px;
+	right:24px;
+	bottom:38px;
+}
+.center_content ul li.youcan .btn {
+	position:absolute;
+	width:150  px;
+	height:37px;
+	right:24px;
+	bottom:38px;
+}
+.center_content ul {
+	padding-left:62px;
+}
+.location_bar {
+	height:70px;
+	background:#bdbebf;
+	font-family: 'Helvetica W01 Light Cn', arial;
+	font-size:24px;
+	color:#000000;
+	clear:both;
+}
+.location_bar a {
+	color:#000000;
+	text-decoration:none;
+}
+.location_bar .picklocation {
+	padding-left:60px;
+	width:300px;
+	line-height:70px;
+	float:left;
+}
+.location_bar .location {
+	background:url(../../../images/14938d1d19600e9cf201351ac81fac99_arrow_bullet.jpg) no-repeat 5px 24px;
+	padding-left:30px;
+	width:200px;
+	line-height:70px;
+	float:left;
+}
+.footer {
+	background:#ced8df;
+	height:180px;
+	font-family: 'Helvetica W01 Light Cn', arial;
+	margin:0 auto;
+	padding-top:10px;
+}
+.footer .footer_sec {
+	width:237px;
+	float:left;
+	padding-top:20px;
+	padding-left:50px;
+}
+.footer .footer_add {
+	width:300px;
+	float:left;
+	border-left:solid #bdbebf 1px;
+	margin:10px;
+	padding-left:40px;
+	line-height:25px;
+	font-size:14px;
+}
+.footer .footer_sec ul {
+margin:0;
+padding:0;
+}
+.footer .footer_sec ul li {
+	background:url(../../../images/4fe09928c597148f41e8d256741fd37e_blue_bullet.jpg) no-repeat 12px 10px;
+	line-height:35px;
+	padding-left:30px;
+list-style:none;
+}
+.footer .footer_sec ul li a {
+	color:#000000;
+	text-decoration:none;
+}
+
+@media print { .no-print { display: none } }</style>
+
+<style type="text/css" media="print">
+	.eh_outer_div { overflow:visible; }
+</style>
+
+<link rel="stylesheet" href="../../include/lightbox.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../include/with_divs.css" type="text/css"/>
+<link type="text/css" rel="stylesheet" href="../../../themes/global/fonts.css">
+
+	</head>
+	<body>
+		<input type="hidden" id="module" value="ehome" />
+		<input type="hidden" id="eventid" value="46402" />
+
+		
+		<!-- Drop shadow start make this css class-->
+				<div id="outer_table" style="width:750px;margin:0 auto;background-color:#ffffff">
+	<!-- logo row -->
+	<div>
+		<!-- This uses custom HTML instead of the logo -->
+    <div align="center">
+    	<div style="display: block; position:relative;width:1280px;height:153px;">
+
+<img src="../../../file_uploads/89c663c0d08ef80d9bf4c95b014583de_header.jpg" border="0" alt="USTMA" /></div>    </div>
+	</div>
+
+	<!-- menu  row include -->
+	    <div style="background-color:#E8E8E8;" class="tabmenu">
+	    <div class="ehtm">
+	    	
+<ul >
+<li><a href="../78984/index-&.html"  >Home</a></li>
+<li><a href="../79005/index-&.html"  >Who we are<!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+
+<ul>
+<li><a  href="../79007/index-&.html" >Grandmaster Choi</a></li>
+<li><a  href="../79113/index-&.html" >Master John Choi</a></li>
+<li><a  href="../79114/index-&.html" >Instructors</a></li>
+<li><a  href="../79115/index-&.html" >Philosophy & Values</a></li>
+<li><a  href="../79156/index-&.html" >Snapshot</a></li>
+<li><a  href="../79158/index-&.html" >Our Stories</a></li>
+</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li><a href="../79116/index-&.html"  >Our Community<!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+
+<ul>
+<li><a  href="../79117/index-&.html" >USA Taekwondo</a></li>
+<li><a  href="../79118/index-&.html" >USTMA Korea</a></li>
+<li><a  href="../79119/index-&.html" >World Taekwondo Federation</a></li>
+<li><a  href="../79120/index-&.html" >Sponsors</a></li>
+</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li><a href="../79121/index-&.html"  >Schedules<!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+
+<ul>
+<li><a  href="../79122/index-&.html" >Leesburg</a></li>
+
+<li><a  href="../79124/index-&.html" >Berryville</a></li>
+
+<li><a  href="../79157/index-&.html" >Events</a></li>
+</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li><a href="../79126/index-&.html"  >Programs We Offer<!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+
+<ul>
+<li><a  href="../79127/index-&.html" >Kick Cancer Out of the World</a></li>
+<li><a  href="../79128/index-&.html" >Black Belt</a></li>
+<li><a  href="../79129/index-&.html" >Masters</a></li>
+<li><a  href="../79130/index-&.html" >After School Programs</a></li>
+<li><a  href="../79131/index-&.html" >School&#39;s Out Camps</a></li>
+<li><a  href="../79132/index-&.html" >Super Juniors</a></li>
+<li><a  href="../79133/index-&.html" >C-Crew Competition Team</a></li>
+<li><a  href="../79134/index-&.html" >Shinwa Demo Team</a></li>
+<li><a  href="../79135/index-&.html" >Leadership Programs</a></li>
+</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li><a href="../79136/index-&.html"  class="sel_top">Joining Ustma<!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+
+<ul>
+<li><a  href="index-&.html" >Take a Trial Class</a></li>
+<li><a  href="../79138/index-&.html" >Locations</a></li>
+</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+</ul>
+	    </div>
+    </div>
+	<!-- Only show the next bar if we are in an event -->
+		    <div  style="background-color:#a8b7c6" class="languages">
+		    <div class="header right">
+			        &nbsp;
+
+<!-- Provide logout link -->
+		    </div>
+            <div class="clear"></div>
+	    </div>
+		<!-- end bar row -->
+
+	<!-- main row -->
+	<div>
+		<div id="inner_content" style="padding:10px;">
+			
+<div class="eh_outer_div" style="width:730px;">
+
+	
+			<div id="main_section" class="left" style="width:730px;margin-right:0px;margin-bottom:10px;">
+				    		        <div><div style="width:100%;overflow:hidden"><div id="inner_page"><h2>Take a Trial Class</h2>
+        
+	<p>We want you to make sure that martial arts is a good fit for yourself or your child. There's no better way to find out than to take a trial class, meet our instructors and experience our dojang.</p>
+
+<p><a href="http://teg.wufoo.com/forms/m7x4z5/" title="Schedule a Trial Class with USTMA" target="_blank"><b> > Schedule a personal trial class!</b></a></p></div></div></div>
+		    			</div>
+
+	
+		    <div id="footer_section" class="left" style="width:730px;margin-bottom:10px;">
+	    	        	            <div><div style="width:100%;overflow:hidden"><div>
+             USTMA-Home of Discipline | Headquarters: 9 Cardinal Park Drive, Leesburg, VA 20132</div>
+<div>703-777-1000 &nbsp; | &nbsp; info@ustma.com</div></div></div>
+	        	    	    </div>
+	
+</div>
+		</div>
+	</div>
+	<!-- end main row -->
+</div>
+
+<!-- additional scripts -->
+
+<script type="text/javascript">
+//Add iframe param to youtube src in order to work in all browsers
+var iframes = document.getElementsByTagName('iframe');
+for (var i = 0; i < iframes.length; i++) {
+    if (iframes[i].src.substr(0,22) == "http://www.youtube.com") {
+        iframes[i].src += iframes[i].src.indexOf('?') == -1 ? '?' : '&';
+        iframes[i].src += 'enablejsapi=1';
+    }
+}
+
+</script>
+
+	<script src="../../../../seal.verisign.com/getseal/index-host_name=&size=S&use_flash=NO&use_transparent=YES&lang=en.html"></script>
+
+		
+		<div id="overlay" style="display:none;position:absolute;top:0px;left:0px;z-index:1000000;width:100%;height:100%;background-color:#000000;filter:alpha(opacity=75);-moz-opacity:.75;opacity:.75;"></div>
+
+		<div id="home_od" style="display:none;position:absolute;top:0px;left:0px;z-index:1000001;background-color:#FFFFFF;border-1px solid #CCCCCC;">
+			<table cellspacing="0" cellpadding="0" height="100%" width="100%">
+				<tr bgcolor="#a8b7c6">
+					<td height="25">
+						<img src="../../../images/spacer.gif" height="25" width="1" align="left" />
+						<span id="title" style="position:absolute;top:4px;left:10px;font-weight:bold;color:#000000;"></span>
+						<img src="../../../images/close.png" border="0" onclick="close_overlay();" style="position:absolute;top:4px;right:4px;cursor:pointer;" />
+					</td>
+				</tr>
+				<tr>
+					<td height="100%" align="center" valign="top">
+						<div id="home_id" style="overflow:scroll;">
+							<img id="image" src="../../../images/spinner.gif" border="0" />
+							<iframe src="../../../ereg/popups/sessiondetails.php.html" name="url" id="url" frameborder="0" style="display:none;"></iframe>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","licenseKey":"4d875d840e","applicationID":"2785806,2812500","transactionName":"NVUAYhdQC0RWV0ZcDAwfN0QMHgBfWFlXGgoMVAdOS0ENRw==","queueTime":0,"applicationTime":191,"atts":"GRIDFF9KGEo=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>
+<!-- Localized -->
